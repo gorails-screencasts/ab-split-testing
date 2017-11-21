@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  mount Split::Dashboard, at: "split"
+
   namespace :admin do
     resources :users
     resources :announcements

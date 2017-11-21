@@ -1,2 +1,6 @@
-<h1>Welcome to Spork!</h1>
-<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<h1>Welcome to GoRails!</h1>
+<p class="lead">
+  <% ab_test(:sign_up_link_class, "btn-link", "btn-primary") do |alternative| %>
+    <%= link_to "Sign up now!", new_user_registration_path, class: "btn #{alternative}" %>
+  <% end %>
+</p>
